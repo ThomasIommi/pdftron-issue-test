@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@pdftron/webviewer"
+            ],
             "outputPath": "dist/pdftron-issue-test",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -20,12 +23,19 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@pdftron/webviewer/public/core",
+                "output": "lib/pdftron/core"
+              }
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@pdftron/webviewer/public/core/webviewer-core.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -33,7 +43,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",

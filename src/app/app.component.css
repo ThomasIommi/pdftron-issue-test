@@ -1,0 +1,49 @@
+:host {
+  --header-height: 8rem
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  height: var(--header-height);
+  background-color: rgba(255, 0, 0, 0.47);
+}
+
+.sidebar {
+  grid-row-start: span 2;
+  grid-row-end: span 2;
+  background-color: rgba(255, 234, 0, 0.8);
+}
+
+.relative-viewer-parent {
+  height: calc(100vh - var(--header-height));
+  background-color: rgba(0, 34, 255, 0.26);
+  position: relative;
+}
+
+.scroll-view {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.viewer {
+  margin: auto;
+}
+
+.absolute-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 5rem;
+  width: 12rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 255, 37, 0.56);
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
