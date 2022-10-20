@@ -24,6 +24,9 @@ export class AppComponent implements AfterViewInit {
 
   private viewer!: Core.DocumentViewer;
 
+  vw: number = window.innerWidth;
+  vh: number = window.innerHeight;
+
   async ngAfterViewInit() {
     this.viewer = new PDFTRON.DocumentViewer();
     this.viewer.setViewerElement(this.viewerRef.nativeElement);

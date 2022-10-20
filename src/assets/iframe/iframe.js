@@ -1,6 +1,8 @@
 window.addEventListener('load', async e => {
   const scrollViewElement = document.getElementById('scroll-view');
   const viewerElement = document.getElementById('viewer');
+  const viewportValues = document.getElementById('viewport-values');
+  viewportValues.innerText = `IFRAME VIEWPORT width: ${window.innerWidth}px, height: ${window.innerHeight}px`;
   const PDFTRON = window.Core;
   console.log(window);
   PDFTRON.setWorkerPath('../../lib/pdftron/core');

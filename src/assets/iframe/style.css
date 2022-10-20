@@ -14,3 +14,11 @@ html, body {
 .viewer {
   margin: auto;
 }
+
+.viewport-values {
+  background-color: rgba(253, 253, 253, 0.63);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
