@@ -23,6 +23,8 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('viewer') viewerRef!: ElementRef<HTMLElement>;
 
   private viewer!: Core.DocumentViewer;
+  private areaSelectTool!: Core.Tools.RectangleCreateTool;
+  private textSelectTool!: Core.Tools.TextSelectTool;
 
   vw: number = window.innerWidth;
   vh: number = window.innerHeight;
@@ -31,9 +33,17 @@ export class AppComponent implements AfterViewInit {
     this.viewer = new PDFTRON.DocumentViewer();
     this.viewer.setViewerElement(this.viewerRef.nativeElement);
     this.viewer.setScrollViewElement(this.scrollViewRef.nativeElement);
-    await this.viewer.loadDocument('/assets/PDFTRON_about.pdf')
-    const textSelectTool = this.viewer.getTool(PDFTRON.Tools.ToolNames.TEXT_SELECT);
-    this.viewer.setToolMode(textSelectTool);
+    await this.viewer.loadDocument('/assets/PDFTRON_about.pdf');
+    this.viewer.setOptions({enableAnnotations: true});
+    this.textSelectTool = this.viewer.getTool(PDFTRON.Tools.ToolNames.TEXT_SELECT) as Core.Tools.TextSelectTool;
+    this.areaSelectTool = this.viewer.getTool(PDFTRON.Tools.ToolNames.RECTANGLE) as Core.Tools.RectangleCreateTool;
+    this.areaSelectTool.setStyles({
+      'StrokeColor': new PDFTRON.Annotations.Color(231, 124, 39),
+      'StrokeThickness': 1,
+      'FillColor': new PDFTRON.Annotations.Color(253, 195, 0),
+      'Opacity': 0.6
+    });
+    this.viewer.setToolMode(this.textSelectTool);
   }
 
 }

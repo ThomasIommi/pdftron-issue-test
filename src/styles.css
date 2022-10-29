@@ -4,3 +4,17 @@ html, body {
   height: 100%;
   margin: 0;
 }
+
+:root {
+  --header-height: 8rem;
+}
+
+#virtualListContainer {
+  top: calc(0rem - var(--header-height)); /* using CSS variables also works */
+  margin-top: var(--header-height);
+}
+
+#selectionrect {
+  margin-top: calc(0rem - var(--header-height));
+}
+

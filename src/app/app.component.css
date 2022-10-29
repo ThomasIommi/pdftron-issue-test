@@ -1,6 +1,3 @@
-:host {
-  --header-height: 8rem
-}
 
 .header {
   display: flex;
@@ -31,6 +28,7 @@
 }
 
 .viewer {
+  position: relative;
   margin: auto;
 }
 
