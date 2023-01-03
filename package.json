@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:webc": "ng build --configuration webcomponent",
+    "run:webc": "npm run build:webc && npx http-server ./dist/pdftron-issue-test -p 4250",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -15,6 +17,7 @@
     "@angular/compiler": "^14.2.0",
     "@angular/core": "^14.2.0",
     "@angular/forms": "^14.2.0",
+    "@angular/elements": "^14.2.0",
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",

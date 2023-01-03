@@ -43,7 +43,7 @@ export class AppComponent implements AfterViewInit {
       'FillColor': new PDFTRON.Annotations.Color(253, 195, 0),
       'Opacity': 0.6
     });
-    this.viewer.setToolMode(this.textSelectTool);
+    this.viewer.setToolMode(this.areaSelectTool);
   }
 
 }

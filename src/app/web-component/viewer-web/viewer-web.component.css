@@ -1,0 +1,11 @@
+/* this is an hack to make annotation precise on viewers that have a position relative container,
+see https://community.pdftron.com/t/incorrect-annotation-layer-position-when-a-parent-div-container-has-the-postion-relative-css-property/6746 */
+
+#virtualListContainer {
+  top: calc(0rem - var(--header-height)); /* using CSS variables also works */
+  margin-top: var(--header-height);
+}
+
+#selectionrect {
+  margin-top: calc(0rem - var(--header-height));
+}
